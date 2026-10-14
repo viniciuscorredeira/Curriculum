@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Tema controlado por data-theme no <html> (definido antes da pintura pelo script do layout). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Paleta quente e suave: creme, café e terracota. Contraste conferido (WCAG AA). */
+:root {
+  --background: #f7f2ea;
+  --surface: #fdfaf4;
+  --chip: #efe5d7;
+  --foreground: #2b241f;
+  --muted: #5a4f46;
+  --subtle: #76695d;
+  --border: #e4d9ca;
+  --accent: #a14f2c;
+  --accent-hover: #88411f;
+  --accent-soft: #f1dccb;
+  --accent-contrast: #fffaf3;
+  --sage: #5d7a5a;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background: #1c1814;
+  --surface: #262019;
+  --chip: #312921;
+  --foreground: #efe6da;
+  --muted: #c6baab;
+  --subtle: #a29585;
+  --border: #3a3029;
+  --accent: #e3a37f;
+  --accent-hover: #edb898;
+  --accent-soft: #4a3326;
+  --accent-contrast: #1c1814;
+  --sage: #9dbd96;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-chip: var(--chip);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-sage: var(--sage);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-jakarta);
+}
+
+/*
+ * Escala do site: tudo em rem (textos, espaçamentos, largura do container)
+ * acompanha o font-size do html. 16px é o piso para leitura confortável.
+ */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  /* Compensa o header fixo ao navegar por âncoras. */
+  scroll-padding-top: 5rem;
+}
+
+/* Telas a partir de 1280px: 16,2px. */
+@media (min-width: 80rem) {
+  html {
+    font-size: 101.25%;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
