@@ -37,8 +37,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Hero {...props} />
         <About {...props} />
-        <ExperienceSection {...props} />
         <Projects {...props} />
+        <ExperienceSection {...props} />
         <Skills {...props} />
         <EducationSection {...props} />
         <Contact {...props} />

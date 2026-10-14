@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
 import { profile } from "@/content/profile";
 import type { Dictionary } from "@/content/ui";
+import { cvHref } from "@/lib/cv";
 import { t, type Locale } from "@/lib/i18n";
 import {
   ArrowUpRightIcon,
+  DownloadIcon,
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
@@ -53,6 +55,18 @@ function SocialLinks() {
   );
 }
 
+function CvButton({ lang, dict }: SectionProps) {
+  const href = cvHref(lang);
+  if (!href) return null;
+
+  return (
+    <a href={href} download className={buttonGhost}>
+      <DownloadIcon className="size-[1.1em]" />
+      {dict.cv.download}
+    </a>
+  );
+}
+
 export function Hero({ lang, dict }: SectionProps) {
   return (
     <section id="top" className="pb-20 pt-36 sm:pb-28 sm:pt-44">
@@ -78,6 +92,7 @@ export function Hero({ lang, dict }: SectionProps) {
           <MailIcon className="size-[1.1em]" />
           {dict.hero.contact}
         </a>
+        <CvButton lang={lang} dict={dict} />
         <SocialLinks />
       </div>
     </section>
@@ -222,6 +237,15 @@ export function EducationSection({ lang, dict }: SectionProps) {
       </ul>
 
       <h3 className="mt-16 font-heading text-2xl font-bold tracking-tight sm:text-3xl">
+        {dict.sections.studying}
+      </h3>
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {profile.studying.map((item) => (
+          <Tag key={t(item, "en")}>{t(item, lang)}</Tag>
+        ))}
+      </ul>
+
+      <h3 className="mt-16 font-heading text-2xl font-bold tracking-tight sm:text-3xl">
         {dict.sections.languages}
       </h3>
       <ul className="mt-8 space-y-6">
@@ -244,7 +268,7 @@ export function EducationSection({ lang, dict }: SectionProps) {
   );
 }
 
-export function Contact({ dict }: SectionProps) {
+export function Contact({ lang, dict }: SectionProps) {
   return (
     <Section id="contact" title={dict.sections.contact}>
       <p className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl sm:leading-relaxed">
@@ -261,6 +285,7 @@ export function Contact({ dict }: SectionProps) {
           <MailIcon className="size-[1.1em]" />
           {dict.contact.email}
         </a>
+        <CvButton lang={lang} dict={dict} />
         <SocialLinks />
       </div>
     </Section>

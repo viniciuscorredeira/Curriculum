@@ -38,12 +38,12 @@ export type SkillGroup = {
 export const profile = {
   name: "Vinicius Corredeira",
   role: {
-    pt: "Analista de QA",
-    en: "QA Analyst",
+    pt: "Desenvolvedor de Software",
+    en: "Software Developer",
   },
   headline: {
-    pt: "Automação de testes end-to-end com Cypress e TypeScript, homologação de releases e documentação que as pessoas realmente conseguem usar.",
-    en: "End-to-end test automation with Cypress and TypeScript, release sign-off, and documentation people can actually use.",
+    pt: "Venho da automação de testes e hoje desenvolvo aplicações em JavaScript e TypeScript com a qualidade pensada desde a primeira linha de código.",
+    en: "I come from test automation and now build JavaScript and TypeScript applications with quality in mind from the very first line of code.",
   },
   location: {
     pt: "Catanduva – SP, Brasil",
@@ -54,23 +54,31 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/vin%C3%ADcius-corredeira-59554136a/",
     github: "https://github.com/viniciuscorredeira",
   },
+  /**
+   * PDFs do currículo, em public/cv/. O botão "Baixar currículo" só aparece
+   * no site publicado quando o arquivo existe (se faltar um idioma, usa o outro).
+   */
+  cv: {
+    pt: "/cv/curriculo-vinicius-corredeira.pdf",
+    en: "/cv/resume-vinicius-corredeira.pdf",
+  } satisfies Localized,
 
   summary: {
     pt: [
-      "Profissional de Qualidade de Software com experiência em automação de testes end-to-end utilizando Cypress e TypeScript, homologação e publicação de releases semanais, documentação funcional e capacitação de usuários.",
-      "Utilizo ferramentas de IA (Claude Code) para acelerar a criação e a manutenção de cenários de teste. Sou graduando em Engenharia da Computação e técnico em Análise e Desenvolvimento de Sistemas, com vivência complementar em suporte de TI e atendimento comercial no setor de automação industrial.",
+      "Sou técnico em Análise e Desenvolvimento de Sistemas e graduando em Engenharia da Computação, com conclusão prevista para Dez/2026. No TCC, desenvolvi o Soletra, uma extensão para Chrome que reconhece o alfabeto de Libras pela câmera, em tempo real.",
+      "Profissionalmente, trabalho com qualidade de software: automação de testes end-to-end com Cypress e TypeScript, homologação de releases semanais, documentação funcional e treinamento de usuários, usando IA (Claude Code) para acelerar o trabalho. Também tenho vivência em suporte de TI e atendimento comercial no setor de automação industrial.",
       "Venho da área de QA e hoje busco uma vaga em desenvolvimento, sem fechar as portas para oportunidades em QA. Tenho uma bagagem moderada, mas sou dedicado a tudo aquilo com que me comprometo.",
     ],
     en: [
-      "Software Quality professional experienced in end-to-end test automation with Cypress and TypeScript, weekly release sign-off and publishing, functional documentation, and user training.",
-      "I use AI tools (Claude Code) to speed up writing and maintaining test scenarios. I'm finishing a Bachelor's in Computer Engineering and hold a technical degree in Systems Analysis and Development, with additional background in IT support and sales in the industrial automation sector.",
+      "I hold a technical degree in Systems Analysis and Development and I'm finishing a Bachelor's in Computer Engineering, expected in Dec 2026. For my capstone I built Soletra, a Chrome extension that recognizes the Brazilian Sign Language (Libras) alphabet through the webcam in real time.",
+      "Professionally, I work in software quality: end-to-end test automation with Cypress and TypeScript, weekly release sign-off, functional documentation and user training, using AI (Claude Code) to speed up the work. I also have a background in IT support and sales in the industrial automation sector.",
       "I come from QA and I'm now looking for a software development role, while staying open to QA opportunities. My experience is still moderate, but I'm dedicated to everything I commit to.",
     ],
   } satisfies Localized<string[]>,
 
   highlights: [
-    { value: "Cypress + TS", label: { pt: "Automação E2E", en: "E2E automation" } },
-    { value: { pt: "Semanal", en: "Weekly" }, label: { pt: "Homologação de releases", en: "Release sign-off" } },
+    { value: { pt: "Libras em tempo real", en: "Real-time Libras" }, label: { pt: "TCC · Soletra", en: "Capstone · Soletra" } },
+    { value: "Cypress + TS", label: { pt: "Base em QA", en: "QA background" } },
     { value: { pt: "Inglês B2", en: "English B2" }, label: { pt: "Intermediário avançado", en: "Upper-intermediate" } },
   ] satisfies { value: Text; label: Text }[],
 
@@ -170,6 +178,14 @@ export const profile = {
 
   skills: [
     {
+      title: { pt: "Desenvolvimento", en: "Development" },
+      items: ["TypeScript", "Node.js", "Python", "PostgreSQL", { pt: "Aplicações web", en: "Web applications" }],
+    },
+    {
+      title: { pt: "Automação e Ferramentas", en: "Automation & Tools" },
+      items: ["Cypress", "Postman", "Claude Code", "Git", "GitHub", "Docker"],
+    },
+    {
       title: { pt: "Qualidade de Software", en: "Software Quality" },
       items: [
         { pt: "Testes end-to-end", en: "End-to-end testing" },
@@ -178,14 +194,6 @@ export const profile = {
         { pt: "Documentação de software", en: "Software documentation" },
         { pt: "Garantia da qualidade", en: "Quality assurance" },
       ],
-    },
-    {
-      title: { pt: "Automação e Ferramentas", en: "Automation & Tools" },
-      items: ["Cypress", "Postman", "Claude Code", "Git", "GitHub", "Docker"],
-    },
-    {
-      title: { pt: "Desenvolvimento", en: "Development" },
-      items: ["TypeScript", "Node.js", "Python", "PostgreSQL", { pt: "Aplicações web", en: "Web applications" }],
     },
     {
       title: { pt: "Infraestrutura e Suporte", en: "Infrastructure & Support" },
@@ -223,6 +231,14 @@ export const profile = {
       period: { pt: "Jan/2019 – Dez/2021", en: "Jan 2019 – Dec 2021" },
     },
   ] satisfies Education[],
+
+  /** Tecnologias em estudo, exibidas em Formação. */
+  studying: [
+    "JavaScript",
+    { pt: "HTML e CSS", en: "HTML & CSS" },
+    "Next.js",
+    "Tailwind CSS",
+  ] satisfies Text[],
 
   languages: [
     {

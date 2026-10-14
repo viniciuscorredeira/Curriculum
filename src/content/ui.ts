@@ -21,9 +21,11 @@ const ui = {
       skills: "Competências técnicas",
       education: "Formação acadêmica",
       languages: "Idiomas",
+      studying: "Estudando atualmente",
       contact: "Vamos conversar",
     },
     projects: { repo: "Código", demo: "Ver online" },
+    cv: { download: "Baixar currículo" },
     contact: {
       text: "Estou em busca de oportunidades em desenvolvimento e QA. Se tiver uma vaga ou quiser conversar, me mande uma mensagem pelo canal que preferir.",
       email: "Enviar e-mail",
@@ -40,7 +42,7 @@ const ui = {
     notFound: { title: "Página não encontrada", back: "Voltar para o início" },
     meta: {
       description:
-        "Vinicius Corredeira, Analista de QA em busca de oportunidades em desenvolvimento e QA. Experiência com Cypress, TypeScript, JavaScript e Node.js.",
+        "Vinicius Corredeira, Desenvolvedor de Software com base em QA, em busca de oportunidades em desenvolvimento e QA. JavaScript, TypeScript, Node.js e Cypress.",
     },
   },
   en: {
@@ -63,9 +65,11 @@ const ui = {
       skills: "Technical skills",
       education: "Education",
       languages: "Languages",
+      studying: "Currently studying",
       contact: "Let's talk",
     },
     projects: { repo: "Code", demo: "Live demo" },
+    cv: { download: "Download resume" },
     contact: {
       text: "I'm looking for opportunities in software development and QA. If you have an opening or just want to talk, reach out through whichever channel you prefer.",
       email: "Send an email",
@@ -82,7 +86,7 @@ const ui = {
     notFound: { title: "Page not found", back: "Back to home" },
     meta: {
       description:
-        "Vinicius Corredeira, QA Analyst open to software development and QA roles. Experience with Cypress, TypeScript, JavaScript and Node.js.",
+        "Vinicius Corredeira, Software Developer with a QA background, open to software development and QA roles. JavaScript, TypeScript, Node.js and Cypress.",
     },
   },
 } satisfies Record<Locale, unknown>;

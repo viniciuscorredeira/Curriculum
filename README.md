@@ -34,6 +34,10 @@ Para adicionar um projeto, inclua um item em `projects`:
 },
 ```
 
+## Currículo em PDF
+
+Coloque os arquivos em `public/cv/` com os nomes definidos em `cv` no [`profile.ts`](src/content/profile.ts) (`curriculo-vinicius-corredeira.pdf` e `resume-vinicius-corredeira.pdf`). O botão "Baixar currículo" aparece sozinho no site publicado assim que houver um PDF; se faltar o de um idioma, ele usa o do outro.
+
 ## Personalizando o visual
 
 - **Cores:** variáveis no topo de [`src/app/globals.css`](src/app/globals.css). `:root` é o tema claro e `[data-theme="dark"]` o escuro. A cor de destaque é `--accent`.

@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/i18n";
 import { CloseIcon, MenuIcon } from "./icons";
 import { ThemeToggle } from "./theme-toggle";
 
-const sectionIds = ["about", "experience", "projects", "skills", "education", "contact"] as const;
+const sectionIds = ["about", "projects", "experience", "skills", "education", "contact"] as const;
 
 type HeaderProps = {
   lang: Locale;
